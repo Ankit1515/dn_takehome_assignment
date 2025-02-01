@@ -1,0 +1,99 @@
+:: loading settings :: url = jar:file:/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/pyspark/jars/ivy-2.5.1.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Found 52 people data files:
+Found 83 automobile data files:
+Found 36 ticket data files:
+
+Total records loaded:
+People: 7,123
+Automobiles: 10,299
+Tickets: 16,123
+
+
+Sample Automobiles Data:
++------------+-------------+--------------------+-----------------+----+
+|       color|license_plate|           person_id|              vin|year|
++------------+-------------+--------------------+-----------------+----+
+|       Azure|      NX6 A2R|81d9564f-1d34-43c...|3EC1VUUN6NJV2EG7W|1972|
+|  LightCoral|      FE-9511|5715789d-363c-4f9...|8KAR56559M9E16XZE|2002|
+|MediumOrchid|      475 IYC|5715789d-363c-4f9...|ZRE2CC9R32UMTE2J9|1974|
+| LightSalmon|      JZB-867|5715789d-363c-4f9...|6BXB7AP83DK3G0K7H|1994|
+|         Tan|     ZD4 9909|26c40640-e3a0-42d...|26E4M6YJ9KZST72X9|2008|
++------------+-------------+--------------------+-----------------+----+
+only showing top 5 rows
+
+
+Sample People Data:
++--------------------+----------+---------+---+--------------------+--------------------+--------------------+--------------------+-------------+
+|                  id|first_name|last_name|sex|             address|        phone_number|          profession|             company|date_of_birth|
++--------------------+----------+---------+---+--------------------+--------------------+--------------------+--------------------+-------------+
+|517073e1-4972-42e...|    Marcus|    Brown|  M|836 Ward Parkway ...|        746.754.3074|Chief Technology ...|           Miles Ltd|   1944-09-11|
+|6a846b15-2d5b-414...|    Hannah|    Terry|  F|905 Yates Harbor ...|     +1-661-277-0310|  Physicist, medical|       Mann-Jennings|   1954-03-15|
+|03000a96-935a-4c2...|    Donald|Fernandez|  M|62 Heather Garden...|   935.805.6347x0487|    Sports therapist|Thomas, Beasley a...|   1939-11-13|
+|bfd1de08-27d7-43e...|   Gregory|   Martin|  M|80 Gray Walks Apt...| (959)990-6275x11855|               Actor|Sandoval, Hansen ...|   1965-12-28|
+|b2d01083-37ae-4b3...| Elizabeth| Buchanan|  F|820 Hood Loop Apt...|001-952-938-3883x...|Administrator, sp...|         Payne-Smith|   1944-01-26|
++--------------------+----------+---------+---+--------------------+--------------------+--------------------+--------------------+-------------+
+only showing top 5 rows
+
+
+Identified 55 officers
+
+Sample Officers Data:
++--------------------+----------+---------+---+--------------------+--------------------+--------------+--------------+-------------+
+|                  id|first_name|last_name|sex|             address|        phone_number|    profession|       company|date_of_birth|
++--------------------+----------+---------+---+--------------------+--------------------+--------------+--------------+-------------+
+|3e99107e-ed1c-489...|     Diane|   Fisher|  F|    502 Bailey Trail|        722.257.4397|Police Officer|          TTPD|   1958-10-05|
+|56b147ea-8c68-494...|     Erica|    Riley|  F|658 John Fall Apt...|001-425-620-3024x...|Police officer|Frazier-Fisher|   1984-03-13|
+|274e40c3-fa93-4f4...|  Kimberly|    Smith|  F|    171 Randall Burg|        410.729.3343|Police Officer|          TTPD|   1914-11-24|
+|e2155846-cecb-471...|     David|Christian|  M|868 Yates Harbor ...|       (204)927-7621|Police Officer|          TTPD|   1969-12-02|
+|68c0fbf3-a42d-4ed...|   Heather|    Boone|  F|607 Charles Mall ...|        354-236-5682|Police officer| Berry-Edwards|   1965-11-16|
++--------------------+----------+---------+---+--------------------+--------------------+--------------+--------------+-------------+
+only showing top 5 rows
+
+
+Sample Tickets Data:
++--------------------+-------------+--------------------+-----------------------+---------------+-----------+-------------------+-------------+---+----------+
+|                  id|license_plate|          officer_id|recorded_mph_over_limit|school_zone_ind|speed_limit|        ticket_time|work_zone_ind|fee|year_month|
++--------------------+-------------+--------------------+-----------------------+---------------+-----------+-------------------+-------------+---+----------+
+|ca15defb-82f0-45f...|     ASJ-6151|e25e51fe-477a-4b9...|                     30|          false|         55|2021-01-31 19:53:06|         true| 60|   2021-01|
+|bd364cae-5635-4aa...|      49B Y19|29b757f2-809a-44f...|                      8|          false|         25|2020-07-31 03:13:51|         true| 60|   2020-07|
+|82eb730b-0f99-461...|      376-PSK|391da49c-a89f-4ef...|                     24|          false|         65|2023-08-31 19:58:09|        false| 30|   2023-08|
+|d17b3d28-f278-483...|      24K•789|51226066-9f3d-482...|                     21|          false|         55|2023-03-31 18:26:12|         true| 60|   2023-03|
+|458062b9-e33b-458...|      474-OMA|391da49c-a89f-4ef...|                     30|          false|         55|2023-12-31 09:16:07|         true| 60|   2023-12|
++--------------------+-------------+--------------------+-----------------------+---------------+-----------+-------------------+-------------+---+----------+
+only showing top 5 rows
+
+
+1. Officer who issued the most tickets:
++--------------------+----------+---------+------------+
+|          officer_id|first_name|last_name|ticket_count|
++--------------------+----------+---------+------------+
+|f6c8ecff-14c4-410...|   Barbara|Cervantes|         419|
++--------------------+----------+---------+------------+
+
+
+2. Top 3 months with most tickets:
++----------+------------+
+|year_month|ticket_count|
++----------+------------+
+|   2023-12|        1258|
+|   2022-12|         824|
+|   2021-12|         803|
++----------+------------+
+
+
+3. Top 10 people who spent the most on tickets:
++--------------------+----------+---------+----------+
+|           person_id|first_name|last_name|total_fees|
++--------------------+----------+---------+----------+
+|9c7f69d1-5d9b-4f6...|   Charles|     Dunn|       660|
+|cc2ea84b-c615-47b...|  Kimberly| Mcdowell|       660|
+|12fd23fd-7b1b-4d9...|     Ariel|    Smith|       630|
+|56ec719d-0aa4-496...|    Pamela|    Young|       630|
+|13a5c6dd-d1e3-424...|     Avery|    Smith|       600|
+|1ec9e873-8f9a-4b1...|     Tracy|    Casey|       600|
+|6b9554cf-3d89-4da...|    Adrian|      May|       570|
+|bdcc5422-0571-42d...|     Carla| Robinson|       570|
+|ad6533b3-5334-4ae...|    Shelia|   Parker|       540|
+|423ef1a8-e167-419...|    Justin| Matthews|       540|
++--------------------+----------+---------+----------+
+
